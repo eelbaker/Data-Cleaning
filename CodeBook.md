@@ -73,11 +73,11 @@ tBodyGyroJerkMean
 
 The complete list of variables of each feature vector is available in 'features.txt'
 #My Transformations:
-I extracted standard deviation and mean measurements, and then took the average of them grouped by subject ID (bySubject) and activity type (byActivity).
+I extracted standard deviation and mean measurements, and then took the average of them grouped by subject ID and activity type.
+Subject ID numbers and activity types are both listed under the group variable.  This was necessary in order to get the output into a single text file.
+
 #Codebook:
- $ subject                                                     : int  
- $ activity                                                    : Factor w/ 6 levels "LAYING","SITTING","WALKING_UPSTAIRS
-","WALKING_DOWNSTAIRS","WALKING","STANDING"
+ $ group                                                       : char  
  $ timeBodyAccelerometerMeanX                                  : num  
  $ timeBodyAccelerometerMeanY                                  : num  
  $ timeBodyAccelerometerMeanZ                                  : num  

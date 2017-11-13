@@ -59,5 +59,9 @@ library(reshape2)
 dataMelt <- melt(mergedData, id = c("subject", "activity"), measure.vars = names(mergedData)[3:68])
 bySubject <- dcast(dataMelt, subject ~ variable, mean)
 byActivity <- dcast(dataMelt, activity ~ variable, mean)
-write.csv(bySubject, "meanBySubject.csv")
-write.csv(byActivity, "meanByActivity.csv")
+names(bySubject)[1] <- "group"
+names(byActivity)[1] <- "group"
+byActivity$group <- as.character(byActivity$group)
+bySubject$group <- as.character(byActivity$group)
+tidyData <- rbind(byActivity, bySubject)
+write.table(tidyData, "tidyData.txt", row.name = FALSE)

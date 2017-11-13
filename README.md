@@ -37,6 +37,7 @@ There are no periods, underscores, or whitespace in the resulting names.  Every 
 The reshape2 package is used to get the data into the desired tidy form.
 First, the data is melted using subject and activity as id, and everything else as measured variables.
 The mean is then taken for each variable grouped by subject and stored in bySubject.  The same is done for activity in byActivity.
-bySubject and byActivity are then written to csv files.  They are stored in separate tables (and thus separate files) because it would be awkard to merge them.
+bySubject and byActivity then have their respective id columns renamed to 'group' and are merged.
+The new tidyData frame is written to a file with write.table. 
 
 
